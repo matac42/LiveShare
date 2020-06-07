@@ -41,7 +41,7 @@ type APIInfo struct {
 // CreateAPIInfo create APIInfo based on apiinfo.json.
 func CreateAPIInfo() APIInfo {
 	apiInfo := APIInfo{}
-	raw, err := ioutil.ReadFile("~/Downloads/apiinfo.json")
+	raw, err := ioutil.ReadFile("/home/ubuntu/Downloads/apiinfo.json")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
