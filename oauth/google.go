@@ -23,7 +23,7 @@ type Conf struct {
 // CredentialInfo store oauth2 access token etc...
 type CredentialInfo struct {
 	gorm.Model
-	Token oauth2.Token
+	oauth2.Token
 }
 
 // APIInfo include api info from google.
