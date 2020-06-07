@@ -8,6 +8,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	// mysql is used for gorm.
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/matac42/LiveShare/database"
 	"golang.org/x/oauth2"
