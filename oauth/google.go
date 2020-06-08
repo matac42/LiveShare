@@ -60,7 +60,7 @@ func CreateConf() Conf {
 		oauth2.Config{
 			ClientID:     apiInfo.Web.ClientID,
 			ClientSecret: apiInfo.Web.ClientSecret,
-			Scopes:       []string{"https://www.googleapis.com/auth/youtube.readonly"},
+			Scopes:       []string{"https://www.googleapis.com/auth/youtube"},
 			Endpoint: oauth2.Endpoint{
 				AuthURL:  apiInfo.Web.AuthURI,
 				TokenURL: apiInfo.Web.TokenURI,
@@ -120,13 +120,11 @@ func (conf Conf) GetAccessToken(c *gin.Context, code string) *oauth2.Token {
 	return tok
 }
 
-// GetChannelInfo get ...
-func (conf Conf) GetChannelInfo(c *gin.Context, tok *oauth2.Token) {
-	client := conf.Client(c, tok)
-	client.Get("...")
-
-	// db保存用の構造体の初期化をここでして，いれてそれを返す感じ．
-}
+// // GetChannelInfo get ...
+// func (conf Conf) GetChannelInfo(c *gin.Context, tok *oauth2.Token) {
+// 	client := conf.Client(c, tok)
+// 	resp, err := client.Get()
+// }
 
 // SaveCredentialInfo is routines for storing credential info to the database.
 func SaveCredentialInfo(cre CredentialInfo) {
